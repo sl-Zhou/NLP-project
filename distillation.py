@@ -7,12 +7,12 @@ from transformers import TrainingArguments, Trainer
 from functools import partial
 
 # Load the tokenizer
-tokenizer = AutoTokenizer.from_pretrained("EleutherAI/pythia-160m", padding_side='left')
+tokenizer = AutoTokenizer.from_pretrained("EleutherAI/pythia-160m")
 model_name = "EleutherAI/pythia-160m"
 filename = 'updated_clean_tmu.csv'
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # number of steps to train for
-# max_steps = 200
+max_steps = 100
 # number of examples in each batch
 batch_size = 16
 # number of epochs to train for
@@ -54,10 +54,10 @@ training_args = TrainingArguments(
     # Learning rate
     learning_rate=learning_rate,
     # Number of training epochs
-    num_train_epochs=epochs,
+    # num_train_epochs=epochs,
     # Max steps to train for (each step is a batch of data)
     # Overrides num_train_epochs, if not -1
-    # max_steps=max_steps,
+    max_steps=max_steps,
     # Batch size for training
     per_device_train_batch_size=batch_size,
     # Directory to save model checkpoints
@@ -65,13 +65,13 @@ training_args = TrainingArguments(
     # Other arguments
     overwrite_output_dir=False, # Overwrite the content of the output directory
     disable_tqdm=False, # Disable progress bars
-    eval_steps=200, # Number of update steps between two evaluations
-    save_steps=200, # After # steps model is saved
+    eval_steps=100, # Number of update steps between two evaluations
+    save_steps=100, # After # steps model is saved
     warmup_steps=1, # Number of warmup steps for learning rate scheduler
     per_device_eval_batch_size=1, # Batch size for evaluation
-    evaluation_strategy="epoch",
-    save_strategy="epoch",
-    logging_strategy="epoch",
+    evaluation_strategy="steps",
+    save_strategy="steps",
+    logging_strategy="steps",
     logging_steps=1,
     optim="adafactor",
     gradient_accumulation_steps = 4,
