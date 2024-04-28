@@ -7,12 +7,12 @@ from transformers import TrainingArguments, Trainer
 from functools import partial
 
 # Load the tokenizer
-tokenizer = AutoTokenizer.from_pretrained("EleutherAI/pythia-160m")
+tokenizer = AutoTokenizer.from_pretrained("EleutherAI/pythia-160m", padding_side='left')
 model_name = "EleutherAI/pythia-160m"
 filename = 'updated_clean_tmu.csv'
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # number of steps to train for
-max_steps = 100
+max_steps = 1500
 # number of examples in each batch
 batch_size = 16
 # number of epochs to train for
