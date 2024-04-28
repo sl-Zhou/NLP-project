@@ -8,54 +8,25 @@
 
 
 ## Prerequisites
-- pandas
-
-
-  
+[requirements](https://github.com/sl-Zhou/NLP-project/blob/main/requirements.txt)
 Of course the python environment is essential!
 
-## Run Locally
+## Run the code
+Because we are using the notebook format, you can clearly see the results of our run and then reproduce the results by running each cell in turn.
 
-### Step 1. Clone the project
-```
-  git clone https://github.com/Arminhosseini/IFT6758_project.git
-```
-Or you can just download our zip file!
 
-### Step 2. Install Environment
-```
-cd IFT6758_project
-virtualenv venv
-source venv/bin/activate
-pip install -r requirement.txt
-```
+### Baseline and Finetuning
+[Here](https://github.com/sl-Zhou/NLP-project/blob/main/pythia_finetuning.ipynb)
 
-### Step 3. Download NHL Play-by-Play Data (It will take some time :))
-``` 
-python crawler.py
-```
-You can also check out [this page](https://github.com/Arminhosseini/IFT6758_project/blob/main/docs/crawler.md) for a more detailed guide
 
-### Step 4. Check the Interactive NHL Game Data Panel
-```
-run interactive_debugging_tool.ipynb
-```
-You can also check out [this page](https://github.com/Arminhosseini/IFT6758_project/blob/main/docs/interactive_debugging_tool.md) for a more detailed guide
+### Knowledge distillation with Pythia-160M as the teacher model and Pythia-70M as the student model
+[Here](https://github.com/sl-Zhou/NLP-project/blob/main/DistilPythia_160M.ipynb)
 
-### Step 5. Clean data to get the tidy data
-```
-python tidyData.py
-```
+### Knowledge distillation with Pythia-1B as the teacher model and Pythia-70M as the student model
+[Here](https://github.com/sl-Zhou/NLP-project/blob/main/DistilPythia_1B.ipynb)
 
-### Step 6. Check the simple visualization
-```
-python simple_visualization.py
-```
+You can run these two notebooks to save the model and the csv file of model's output, then check the results(BLEU, ROUGE) at the end of notebook. 
+### Evaluation metric(ERRANT)
+[Here](https://github.com/sl-Zhou/NLP-project/blob/main/preprocess_eval.ipynb)
 
-### Step 7. Check the advanced visualization
-```
-python advanced_visualization.py
-```
-
-### Please note that all our images are stored in the folder [images](https://github.com/Arminhosseini/IFT6758_project/tree/main/images)
-
+You can use the csv file from above notebooks in this notebook to see the results of ERRANT.
