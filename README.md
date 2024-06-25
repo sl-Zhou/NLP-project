@@ -1,4 +1,4 @@
-# IFT6758 Project
+# IFT6289 Project
 [Repo URL](https://github.com/sl-Zhou/NLP-project)
 
 ## Authors
