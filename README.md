@@ -34,16 +34,16 @@ This project focuses on Grammatical Error Correction (GEC) by leveraging the kno
 ## How to Use
 Because we are using the notebook format, you can clearly see the results of our run and then reproduce the results by running each cell in turn.
 
-1. **Clone the Repository**:
-   \`\`\`bash
+1. **Clone the Repository**:.
+   ```bash
    git clone https://github.com/sl-Zhou/NLP-project.git
    cd NLP-project
-   \`\`\`
+   ```
 
 2. **Install Dependencies**:
-   \`\`\`bash
+   ```bash
    pip install -r requirements.txt
-   \`\`\`
+   ```
 
 3. **Baseline and Finetuning**
    [Here](https://github.com/sl-Zhou/NLP-project/blob/main/pythia_finetuning.ipynb)
