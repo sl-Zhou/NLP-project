@@ -32,7 +32,7 @@ This project focuses on Grammatical Error Correction (GEC) by leveraging the kno
 
 
 ## How to Use
-Because we are using the notebook format, you can clearly see the results of our run and then reproduce the results by running each cell in turn.
+Because we used the notebook format, you can clearly see the results of our run and then reproduce the results by running each cell in turn.
 
 1. **Clone the Repository**:.
    ```bash
